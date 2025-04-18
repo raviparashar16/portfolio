@@ -36,41 +36,6 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Here you would typically send the data to a server
-        console.log('Form submitted:', data);
-        
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-    });
-}
-
-// Add retro typing effect to the hero section
-const heroTitle = document.querySelector('.hero h1');
-if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    let i = 0;
-    const typeWriter = () => {
-        if (i < text.length) {
-            heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    };
-    typeWriter();
-}
-
 // Add scroll-based animations
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');

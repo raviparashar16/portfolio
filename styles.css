@@ -76,6 +76,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    position: relative;
 }
 
 .folder-item:hover {
@@ -89,6 +90,8 @@ body {
 
 .folder-item i {
     color: #ecb100;
+    width: 16px;
+    text-align: center;
 }
 
 .folder-item .fa-file-alt {
@@ -108,7 +111,40 @@ body {
 }
 
 .subfolder-items {
-    margin-left: 20px;
+    margin-left: 24px;
+    position: relative;
+}
+
+/* Draw the vertical line */
+.subfolder-items::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #999;
+}
+
+/* Draw horizontal lines for all items */
+.subfolder-items .folder-item::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    width: 12px;
+    height: 1px;
+    background-color: #999;
+}
+
+/* Special handling for the last item */
+.subfolder-items .folder-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Hide the main vertical line after the last item's midpoint */
+.subfolder-items::before {
+    height: calc(100% - 17px);
 }
 
 /* Content View */
