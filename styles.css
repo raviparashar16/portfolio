@@ -6,54 +6,257 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', 'MS Sans Serif', sans-serif;
     line-height: 1.6;
+    background-color: #f0f0f0;
+    padding: 20px;
+    color: #000;
+}
+
+/* Explorer Window */
+.explorer-window {
+    background-color: #fff;
+    border: 2px solid #999;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Window Header */
+.window-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls {
+    display: flex;
+    align-items: center;
+}
+
+.home-icon {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2rem;
+    color: white;
+    transition: color 0.2s ease;
+}
+
+.home-icon:hover {
+    color: #e8e8e8;
+}
+
+/* Explorer Content */
+.explorer-content {
+    display: flex;
+    flex: 1;
+    border-top: 1px solid #999;
+}
+
+/* Folder Tree */
+.folder-tree {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #999;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.folder-item {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.folder-item:hover {
+    background-color: #e8e8e8;
+}
+
+.folder-item.active {
+    background-color: #0078d7;
+    color: white;
+}
+
+.folder-item i {
+    color: #ecb100;
+}
+
+.folder-item .fa-file-alt {
+    color: #666;
+}
+
+.folder-item .fa-envelope {
+    color: #0078d7;
+}
+
+.folder-item .fa-linkedin {
+    color: #0077b5;
+}
+
+.folder-item .fa-github {
     color: #333;
+}
+
+.subfolder-items {
+    margin-left: 20px;
+}
+
+/* Content View */
+.content-view {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* About Box */
+.about-box {
+    border: 1px solid #999;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #fff;
+}
+
+/* Project Details */
+.project-details {
+    margin-top: 15px;
+}
+
+.project-details img {
+    max-width: 100%;
+    border: 1px solid #999;
+}
+
+.project-details h3 {
+    margin: 10px 0;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0078d7;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border: 1px solid #999;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border: 1px solid #999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
 }
 
 /* Navigation */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #f0f0f0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    padding: 1rem 0;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0 5%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #2c3e50;
+    position: absolute;
+    left: 5%;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    background-color: #f0f0f0;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid #2c3e50;
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin: 0;
+    position: relative;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #2c3e50;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    display: block;
+    background-color: #e0e0e0;
+    border: 2px solid #2c3e50;
+    border-bottom: none;
+    margin-right: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+    pointer-events: none;
 }
 
 .nav-links a:hover {
-    color: #3498db;
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+.nav-links a.active {
+    background-color: #fff;
+    color: #2c3e50;
+    z-index: 1;
 }
 
 /* Hero Section */

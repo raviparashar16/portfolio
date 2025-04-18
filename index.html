@@ -3,78 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio Explorer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Ravi Parashar</span></h1>
-            <p class="subtitle">Software/ML Engineer</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+    <div class="explorer-window">
+        <div class="window-header">
+            <div class="title-bar">Portfolio Explorer</div>
+            <div class="window-controls">
+                <i class="fas fa-home home-icon" title="Go to About"></i>
+            </div>
         </div>
-    </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p></p>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>C++</span>
+        <div class="explorer-content">
+            <div class="folder-tree">
+                <div class="folder-item">
+                    <i class="fas fa-folder"></i>
+                    <span>projects</span>
+                    <div class="subfolder-items">
+                        <div class="folder-item">
+                            <i class="fas fa-folder"></i>
+                            <span>project1</span>
+                        </div>
+                        <div class="folder-item">
+                            <i class="fas fa-folder"></i>
+                            <span>project2</span>
+                        </div>
+                        <div class="folder-item">
+                            <i class="fas fa-folder"></i>
+                            <span>project3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="folder-item">
+                    <i class="fas fa-folder"></i>
+                    <span>links</span>
+                    <div class="subfolder-items">
+                        <div class="folder-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>resume</span>
+                        </div>
+                        <div class="folder-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>email</span>
+                        </div>
+                        <div class="folder-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin</span>
+                        </div>
+                        <div class="folder-item">
+                            <i class="fab fa-github"></i>
+                            <span>github</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-view">
+                <div id="about" class="content-section active">
+                    <h2>About</h2>
+                    <div class="about-box">
+                        <p>This is the about section and a few sentences will be contained here.</p>
+                    </div>
+                </div>
+
+                <div id="project1" class="content-section">
+                    <h2>Project 1</h2>
+                    <div class="project-details">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                        <h3>Project 1 Title</h3>
+                        <p>Description of project 1.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div id="project2" class="content-section">
+                    <h2>Project 2</h2>
+                    <div class="project-details">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                        <h3>Project 2 Title</h3>
+                        <p>Description of project 2.</p>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div id="project3" class="content-section">
+                    <h2>Project 3</h2>
+                    <div class="project-details">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                        <h3>Project 3 Title</h3>
+                        <p>Description of project 3.</p>
+                        <a href="#" class="project-link">View Project</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Brief description.</p>
-                <a href="#" class="project-link">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-content">
-            <form class="contact-form">
-                <input type="text" placeholder="Ravi Parashar" required>
-                <input type="email" placeholder="Your email" required>
-                <textarea placeholder="Your message" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Ravi Parashar. All rights reserved.</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
